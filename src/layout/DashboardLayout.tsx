@@ -11,7 +11,7 @@ export default function DashboardLayout() {
       {/* Sidebar */}
       <div className="max-w-sm">
        {
-        role === 'seller' ? <AdminSidebar /> : <SellerSidebar />
+        role === 'seller' ?   <SellerSidebar /> : <AdminSidebar />
        }
       </div>
       <div className="flex-1">
