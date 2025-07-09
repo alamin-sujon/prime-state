@@ -6,7 +6,8 @@ export default function Main() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-[calc(100vh-420px)] my-12 container mx-auto">
+      <div className="min-h-[calc(100vh-420px)]
+       my-12 container mx-auto">
         <Outlet />
       </div>
       <Footer />
