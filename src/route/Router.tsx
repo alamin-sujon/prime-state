@@ -2,7 +2,6 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import Main from "../layout/Main";
-import App from "../App";
 import AllPropertyPage from "../pages/property/all-property/AllPropertyPage";
 import PropertyDetailsPage from "../pages/property/property-details/PropertyDetailsPage";
 import AllCarsPage from "../pages/luxury-cars/all-car/AllCarsPage";
@@ -17,6 +16,7 @@ import AdminLayout from "../layout/AdminLayout";
 import SellerLayout from "../layout/SellerLayout";
 import TotalListed from "../pages/dashboard/seller/TotalListed";
 import CreatePost from "../pages/dashboard/seller/CreatePost";
+import Home from "../pages/home/Home";
 
 
 export const router = createBrowserRouter([
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
     children: [
         {
             index: true,
-            element: <App />
+            element: <Home />
         },
         
         // Property Route
