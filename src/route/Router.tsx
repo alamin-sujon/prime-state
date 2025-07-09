@@ -3,17 +3,18 @@ import {
 } from "react-router-dom";
 import Main from "../layout/Main";
 import App from "../App";
-import DashboardLayout from "../layout/DashboardLayout";
-import AllPropertyPage from "../pages/property/AllPropertyPage";
-import PropertyDetailsPage from "../pages/property/PropertyDetailsPage";
-import AllCarsPage from "../pages/luxury-cars/AllCarsPage";
-import CarDetailsPage from "../pages/luxury-cars/CarDetailsPage";
-import AllYachtsPage from "../pages/luxury-yachts/AllYachtsPage";
+import AllPropertyPage from "../pages/property/all-property/AllPropertyPage";
+import PropertyDetailsPage from "../pages/property/property-details/PropertyDetailsPage";
+import AllCarsPage from "../pages/luxury-cars/all-car/AllCarsPage";
+import CarDetailsPage from "../pages/luxury-cars/car-details/CarDetailsPage";
+import AllYachtsPage from "../pages/luxury-yachts/all-yachts/AllYachtsPage";
 import AllWatchPage from "../pages/luxury-watch/AllWatchPage";
 import WatchDetailsPage from "../pages/luxury-watch/WatchDetailsPage";
-import YachtsDetailsPage from "../pages/luxury-yachts/YachtsDetailsPage";
+import YachtsDetailsPage from "../pages/luxury-yachts/yachts-details/YachtsDetailsPage";
 import AdminDashboard from "../pages/dashboard/admin/AdminDashboard";
 import SellerDashboard from "../pages/dashboard/seller/SellerDashboard";
+import AdminLayout from "../layout/AdminLayout";
+import SellerLayout from "../layout/SellerLayout";
 
 
 export const router = createBrowserRouter([
@@ -68,21 +69,27 @@ export const router = createBrowserRouter([
     ]
   },
   {
-    path: '/dashboard',
-    element: <DashboardLayout />,
+    path: '/admin',
+    element: <AdminLayout />,
     children: [
         {
             path: '',
-            element: <App />
-        },
-        {
-            path: 'admin',
             element: <AdminDashboard />
         },
+        
+      
+    ]
+  },
+  {
+    path: '/seller',
+    element: <SellerLayout />,
+    children: [
         {
-            path: 'seller',
+            path: '',
             element: <SellerDashboard />
-        }
+        },
+        
+      
     ]
   }
 ]);
