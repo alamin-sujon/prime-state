@@ -12,6 +12,8 @@ import AllYachtsPage from "../pages/luxury-yachts/AllYachtsPage";
 import AllWatchPage from "../pages/luxury-watch/AllWatchPage";
 import WatchDetailsPage from "../pages/luxury-watch/WatchDetailsPage";
 import YachtsDetailsPage from "../pages/luxury-yachts/YachtsDetailsPage";
+import AdminDashboard from "../pages/dashboard/admin/AdminDashboard";
+import SellerDashboard from "../pages/dashboard/seller/SellerDashboard";
 
 
 export const router = createBrowserRouter([
@@ -72,6 +74,14 @@ export const router = createBrowserRouter([
         {
             path: '',
             element: <App />
+        },
+        {
+            path: 'admin',
+            element: <AdminDashboard />
+        },
+        {
+            path: 'seller',
+            element: <SellerDashboard />
         }
     ]
   }

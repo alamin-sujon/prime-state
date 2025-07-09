@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom";
+import AdminSidebar from "../pages/dashboard/admin/AdminSidebar";
+import SellerSidebar from "../pages/dashboard/seller/SellerSidebar";
 
-
+type TRole = 'admin' | 'seller'
 export default function DashboardLayout() {
+
+  const role: TRole = 'seller'
   return (
     <div className="flex gap-16">
+      {/* Sidebar */}
       <div className="max-w-sm">
-        <ul>
-            {
-                [1,2,3,4,5].map(el => <li>lorem2 {el}</li>)
-            }
-        </ul>
+       {
+        role === 'seller' ?   <SellerSidebar /> : <AdminSidebar />
+       }
       </div>
       <div className="flex-1">
         <Outlet />
