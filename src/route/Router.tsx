@@ -14,6 +14,8 @@ import AdminDashboard from "../pages/dashboard/admin/AdminDashboard";
 import SellerDashboard from "../pages/dashboard/seller/SellerDashboard";
 import AdminLayout from "../layout/AdminLayout";
 import SellerLayout from "../layout/SellerLayout";
+import TotalListed from "../pages/dashboard/seller/TotalListed";
+import CreatePost from "../pages/dashboard/seller/CreatePost";
 import Home from "../pages/home/Home";
 
 
@@ -80,16 +82,31 @@ export const router = createBrowserRouter([
       
     ]
   },
-  {
+    {
     path: '/seller',
-    element: <SellerLayout />,
+    element: <SellerLayout ></SellerLayout>,
     children: [
-        {
-            path: '',
-            element: <SellerDashboard />
-        },
-        
-      
+      {
+        index: true,
+        element: <SellerDashboard />
+      },
+      {
+        path: 'total-listed',
+        element: <TotalListed />
+      },
+      {
+        path: 'create',
+        element: <CreatePost />
+      },
+
+    //   {
+    //     path: 'my-profile',
+    //     element: <MyProfile />
+    //   },
+    //   {
+    //     path: 'edit',
+    //     element: <EditSeller />
+    //   },
     ]
-  }
+  },
 ]);
