@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link, useLocation,  } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation()
+  console.log({location})
 const navLinks = [
   {path: '/', label: 'Home'},
   {path: '/property', label: 'Property'},
@@ -74,13 +77,13 @@ const navLinks = [
         >
           <div className="flex flex-col md:flex-row md:mx-6">
             {navLinks.map((item) => (
-              <a
+              <Link
                 key={item.path}
-                href="#"
-                className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+                to={item.path}
+                className={`my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0 ${location.pathname === item.path && 'underline underline-offset-4'}`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
