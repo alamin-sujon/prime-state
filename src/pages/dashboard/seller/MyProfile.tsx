@@ -2,6 +2,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import userImg from "../../../assets/Seller-imgs/userDemo.jpg";
 import { useState } from "react";
 import EditProfile from "../../../components/SellerDashboardComponents/EditProfile";
+import ChangePassword from "../../../components/SellerDashboardComponents/ChangePassword";
 const MyProfile = () => {
   const [activeTab, setActiveTab] = useState('profile')
     const personalData = {
@@ -17,8 +18,8 @@ const MyProfile = () => {
         <FaArrowLeft />
         <h1 className="font-semibold">My Profile</h1>
       </div>
-      <div className="flex flex-col md:flex-row md:items-start gap-5">
-        <div className="md:w-1/3 bg-white h-screen rounded-xl">
+      <div className="flex flex-col lg:flex-row lg:items-start gap-5">
+        <div className="lg:w-1/3 bg-white h-screen rounded-xl">
           <div>
             <div>
               <div className="w-full max-w-2xl mx-auto bg-white">
@@ -138,15 +139,15 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-        <div className="md:w-2/3 bg-white h-screen rounded-xl">
+        <div className="lg:w-2/3 bg-white h-screen rounded-xl">
           <div className="p-3">
             <div className="flex items-center">
-              <button onClick={()=> setActiveTab('profile')} className={` w-full cursor-pointer px-5 py-3 text-xl font-semibold border-t-2  rounded ${activeTab === 'profile'? 'border-[#CBA65F] bg-gray-200  ' : ''}`}>Edit Profile</button>
-              <button onClick={()=> setActiveTab('password')} className={` w-full cursor-pointer px-5 py-3 text-xl font-semibold border-t-2 rounded ${activeTab === 'password'? 'border-[#CBA65F] bg-gray-200  ' : ''}`}>Change Password</button>
+              <button onClick={()=> setActiveTab('profile')} className={` w-full cursor-pointer px-3 md:px-5 py-3 md:text-xl font-semibold border-t-2  rounded ${activeTab === 'profile'? 'border-[#CBA65F] bg-gray-200  ' : ''}`}>Edit Profile</button>
+              <button onClick={()=> setActiveTab('password')} className={` w-full cursor-pointer px-3 md:px-5 py-3 md:text-xl font-semibold border-t-2 rounded ${activeTab === 'password'? 'border-[#CBA65F] bg-gray-200  ' : ''}`}>Change Password</button>
             </div>
            <div className="py-2">
              {
-              activeTab === 'profile' ? <EditProfile/> : ''
+              activeTab === 'profile' ? <EditProfile/> : <ChangePassword/>
             }
            </div>
           </div>
