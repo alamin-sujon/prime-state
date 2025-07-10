@@ -29,7 +29,13 @@ const EditProfile = () => {
     "Australia",
   ];
   const states = ["California", "New York", "Texas", "Florida", "Illinois"];
-const cities = ["Los Angeles", "New York City", "Houston", "Chicago", "Miami"];
+  const cities = [
+    "Los Angeles",
+    "New York City",
+    "Houston",
+    "Chicago",
+    "Miami",
+  ];
   const { register, control, handleSubmit, setValue } = useForm<FormData>({
     defaultValues: {
       fullName: "",
@@ -161,7 +167,9 @@ const cities = ["Los Angeles", "New York City", "Houston", "Chicago", "Miami"];
       </div>
 
       <div className="text-end py-2">
-        <button className="px-5 py-2 rounded-md bg-[#CBA65F] font-semibold text-white">Save</button>
+        <button className="px-5 py-2 rounded-md bg-[#CBA65F] font-semibold text-white">
+          Save
+        </button>
       </div>
     </form>
   );
