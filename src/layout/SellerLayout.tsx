@@ -56,14 +56,14 @@ const SellerLayout: React.FC = () => {
       {/* Sidebar */}
       <div
         className={`
-        fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white shadow-lg flex flex-col transform transition-transform duration-300 ease-in-out
+        fixed  inset-y-0 left-0 lg:z-50 w-64 bg-white shadow-lg flex flex-col transform transition-transform duration-300 ease-in-out
         ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }
       `}
       >
         {/* Logo Section */}
-        <div className="p-5 border-b bg-[#CBA65F] border-gray-200">
+        <div className="p-5 border-b bg-[#CBA65F] border-gray-200 h-[72px]">
           <div className="flex items-center justify-between ">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-[#CBA65F] to-[#B8954A] rounded-lg flex items-center justify-center">
@@ -126,7 +126,7 @@ const SellerLayout: React.FC = () => {
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col lg:ml-0">
         {/* Header */}
-        <header className="bg-gradient-to-r from-[#CBA65F] to-[#B8954A] text-white shadow-lg">
+        <header className="fixed top-0 left-0 w-full z-40 bg-gradient-to-r from-[#CBA65F] to-[#B8954A] text-white shadow-lg">
           <div className="px-4 lg:px-8 py-4 flex items-center justify-between">
             <div className="flex items-center space-x-4">
               {/* Mobile menu button */}
@@ -159,7 +159,7 @@ const SellerLayout: React.FC = () => {
 
         {/* Content Area */}
         <main className="flex-1 overflow-auto">
-          <div className="p-4 lg:p-8">
+          <div className="p-4 ml-0 lg:ml-64 lg:p-8 mt-[72px]">
             <Outlet />
           </div>
         </main>

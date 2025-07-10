@@ -36,7 +36,7 @@ interface FormData {
   address: string
 }
 
-const categories = ["Car", "Motorcycle", "Truck", "SUV", "Van"]
+const categories = ["Car", "Luxury Property", "Luxury Yacht", "Jewellery", "Watch", "Luxury Car"]
 const states = ["California", "New York", "Texas", "Florida", "Illinois"]
 const cities = ["Los Angeles", "New York City", "Houston", "Miami", "Chicago"]
 
