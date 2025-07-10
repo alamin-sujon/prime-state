@@ -17,6 +17,7 @@ import SellerLayout from "../layout/SellerLayout";
 import TotalListed from "../pages/dashboard/seller/TotalListed";
 import CreatePost from "../pages/dashboard/seller/CreatePost";
 import Home from "../pages/home/Home";
+import MyProfile from "../pages/dashboard/seller/MyProfile";
 
 
 export const router = createBrowserRouter([
@@ -99,10 +100,10 @@ export const router = createBrowserRouter([
         element: <CreatePost />
       },
 
-    //   {
-    //     path: 'my-profile',
-    //     element: <MyProfile />
-    //   },
+      {
+        path: 'my-profile',
+        element: <MyProfile />
+      },
     //   {
     //     path: 'edit',
     //     element: <EditSeller />
