@@ -1,6 +1,9 @@
 import { FaArrowLeft } from "react-icons/fa";
 import userImg from "../../../assets/Seller-imgs/userDemo.jpg";
+import { useState } from "react";
+import EditProfile from "../../../components/SellerDashboardComponents/EditProfile";
 const MyProfile = () => {
+  const [activeTab, setActiveTab] = useState('profile')
     const personalData = {
     fullName: "Annetter Black",
     email: "annetter.black@gmail.com",
@@ -136,7 +139,17 @@ const MyProfile = () => {
           </div>
         </div>
         <div className="md:w-2/3 bg-white h-screen rounded-xl">
-          Edit Section
+          <div className="p-3">
+            <div className="flex items-center">
+              <button onClick={()=> setActiveTab('profile')} className={` w-full cursor-pointer px-5 py-3 text-xl font-semibold border-t-2  rounded ${activeTab === 'profile'? 'border-[#CBA65F] bg-gray-200  ' : ''}`}>Edit Profile</button>
+              <button onClick={()=> setActiveTab('password')} className={` w-full cursor-pointer px-5 py-3 text-xl font-semibold border-t-2 rounded ${activeTab === 'password'? 'border-[#CBA65F] bg-gray-200  ' : ''}`}>Change Password</button>
+            </div>
+           <div className="py-2">
+             {
+              activeTab === 'profile' ? <EditProfile/> : ''
+            }
+           </div>
+          </div>
         </div>
       </div>
     </div>
